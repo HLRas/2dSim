@@ -497,7 +497,8 @@ def main() -> None:
             # Save a final image and quit if parked or timeout reached
             if reached_goal or sim_time > 25.0:
                 try:
-                    pygame.image.save(screen, "/workspace/parking_result.png")
+                    out_path = os.path.join(os.getcwd(), "parking_result.png")
+                    pygame.image.save(screen, out_path)
                 except Exception:
                     pass
                 running = False
